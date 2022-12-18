@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import css from './Statistics.module.css'
 
 export class Statistics extends Component {
     static defaultProps = {
@@ -18,7 +18,7 @@ export class Statistics extends Component {
         }
         else
             return (
-                <ul>
+                <ul className={css.list}>
                     <li>good: {this.props.stats.good}</li>
                     <li>neutral: {this.props.stats.neutral}</li>
                     <li>bad: {this.props.stats.bad}</li>
