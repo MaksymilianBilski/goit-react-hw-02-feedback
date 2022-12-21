@@ -31,10 +31,8 @@ export class App extends Component {
       return pV += num
     }, 0)
     const positiveSum = (this.state.good / sum).toFixed(2)
-    if (isNaN(positiveSum)) {
-      return
-    }
-    return positiveSum
+    console.log(positiveSum)
+    return Number(positiveSum)
   }
 
   add = (evt) => this.setState(prevState => { return { [evt]: prevState[evt] + 1 } })

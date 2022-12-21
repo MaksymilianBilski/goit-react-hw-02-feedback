@@ -50,5 +50,4 @@ Statistics.propTypes = {
     }),
     total: PropTypes.number,
     positive: PropTypes.number,
-
 }
