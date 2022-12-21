@@ -4,14 +4,19 @@ import { Section } from "./Section/Section";
 import React, { Component } from "react";
 
 export class App extends Component {
-  constructor() {
-    super()
-    this.state = {
-      good: 0,
-      neutral: 0,
-      bad: 0
-    };
-  }
+  // constructor() {
+  //   super()
+  //   this.state = {
+  //     good: 0,
+  //     neutral: 0,
+  //     bad: 0
+  //   };
+  // }
+  state = {
+    good: 0,
+    neutral: 0,
+    bad: 0
+  };
 
   countTotalFeedback = () => {
     if (Object.values(this.state).some(val => val > 0)) {
@@ -26,6 +31,9 @@ export class App extends Component {
       return pV += num
     }, 0)
     const positiveSum = (this.state.good / sum).toFixed(2)
+    if (isNaN(positiveSum)) {
+      return
+    }
     return positiveSum
   }
 
@@ -35,11 +43,11 @@ export class App extends Component {
   }
 
   render() {
-    const btnNames = Object.keys(this.state);
+    const options = Object.keys(this.state);
     return (
       <div>
         <Section title="Please leave feedback">
-          <FeedbackOptions buttonClick={this.buttonClick} options={btnNames} />
+          <FeedbackOptions buttonClick={this.buttonClick} options={options} />
         </Section>
         <Section title="Statistics">
           <Statistics stats={this.state} positive={this.countPositiveFeedbackPercentage()} total={this.countTotalFeedback()} />
