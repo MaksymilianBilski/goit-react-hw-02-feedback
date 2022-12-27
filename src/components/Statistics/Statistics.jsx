@@ -4,10 +4,6 @@ import css from './Statistics.module.css';
 import PropTypes from 'prop-types';
 
 export class Statistics extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     if (this.props.total === undefined) {
       return <Notification />;
