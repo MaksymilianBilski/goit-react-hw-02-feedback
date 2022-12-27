@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import css from './FeedbackOptions.module.css';
 
 export class FeedbackOptions extends Component {
-  static defaultProps = {
-    options: [],
-  };
+  constructor(props) {
+    super(props);
+  }
   render() {
     return this.props.options.map(btn => (
       <button

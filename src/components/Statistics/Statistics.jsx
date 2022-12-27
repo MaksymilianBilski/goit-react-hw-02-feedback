@@ -6,15 +6,6 @@ import PropTypes from 'prop-types';
 export class Statistics extends Component {
   constructor(props) {
     super(props);
-    props = {
-      stats: {
-        good: 0,
-        neutral: 0,
-        bad: 0,
-      },
-      total: 0,
-      positive: 0,
-    };
   }
 
   render() {
